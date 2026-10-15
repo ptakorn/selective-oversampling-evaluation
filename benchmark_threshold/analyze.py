@@ -1,0 +1,27 @@
+from pathlib import Path
+import pandas as pd,numpy as np,json,zipfile
+from scipy.stats import wilcoxon
+R=Path(__file__).parent;E=R.parent/'expanded';d=pd.read_csv(R/'raw.csv');assert len(d)==3240 and (d.status=='ok').all()
+keys=['dataset','noise_rate','classifier','method','rule'];m=d.groupby(keys).agg(gmean=('gmean','mean'),recall=('recall','mean'),precision=('precision','mean'),ap=('ap','mean'),auc=('auc','mean'),folds=('gmean','size')).reset_index();assert (m.folds==15).all();m.to_csv(R/'dataset_means.csv',index=False)
+rows=[]
+for (rate,kind,rule),g in m.groupby(['noise_rate','classifier','rule']):
+ p=g.pivot(index='dataset',columns='method',values='gmean')
+ for base in ('none','smote'):
+  delta=(p.proposed-p[base]).to_numpy();nz=delta[delta!=0];rows.append(dict(noise_rate=rate,classifier=kind,rule=rule,baseline=base,datasets=len(delta),mean_difference=delta.mean(),median_difference=np.median(delta),wins=int((delta>0).sum()),ties=int((delta==0).sum()),raw_p=float(wilcoxon(nz).pvalue) if len(nz) else 1.))
+t=pd.DataFrame(rows);t['holm_p']=np.nan;selected=t[t.rule=='selected'];ids=selected.sort_values('raw_p').index;pv=t.loc[ids,'raw_p'].to_numpy();t.loc[ids,'holm_p']=np.minimum(1,np.maximum.accumulate((len(pv)-np.arange(len(pv)))*pv));t.to_csv(R/'paired_statistics.csv',index=False)
+summary=m.groupby(['noise_rate','classifier','method','rule'])[['gmean','recall','precision','ap','auc']].mean().reset_index();summary.to_csv(R/'summary.csv',index=False)
+old=pd.read_csv(E/'benchmark_raw.csv');old=old[old.method.isin(['none','smote','proposed'])];check=old.merge(d[d.rule=='default'],on=['dataset','rep','fold','noise_rate','classifier','method'],suffixes=('_old','_new'));assert len(check)==1620;error=abs(check.gmean_old-check.gmean_new).max();assert error<1e-12
+p=d.pivot(index=['dataset','rep','fold','noise_rate','classifier','method'],columns='rule',values='auc');assert (p.default==p.selected).all()
+verification=dict(default_models_checked=len(check),max_gmean_difference=float(error),ranking_metrics_unchanged=True);(R/'verification.json').write_text(json.dumps(verification,indent=2))
+def md(df):
+ return '\n'.join(['| '+' | '.join(df.columns)+' |','| '+' | '.join(['---']*len(df.columns))+' |']+['| '+' | '.join(f'{v:.6f}' if isinstance(v,float) else str(v) for v in row)+' |' for row in df.itertuples(index=False,name=None)])
+report='# Benchmark decision-threshold control\n\n'+(R/'README.md').read_text()+'\n\n## Equal-dataset mean results\n\n'+md(summary[['noise_rate','classifier','method','rule','gmean']])+'\n\n## Dataset-level comparisons\n\n'+md(t)+'\n\n## Verification\n\n'+json.dumps(verification,indent=2);(R/'report.md').write_text(report)
+lines=[r'\subsubsection{Benchmark Decision-Threshold Control}',r'\label{subsec:benchmark_threshold_control}',r'The threshold control was extended to all six benchmarks, three classifiers, and both label conditions using the original outer and inner partitions. Classifier parameters remained those selected by default-rule inner G-mean. For each selected configuration, three inner models provided held-out validation scores. A common threshold maximized the mean of the three fold-specific validation G-means over distinct out-of-fold scores in descending order, with the first maximum retained. Validation labels were unchanged; injected corruption was restricted to fitting observations. The final model was refitted on the full outer training fold and evaluated with both decision rules. Test labels were not used for threshold selection.',r'All 1620 final models completed, yielding 3240 decision-rule evaluations. Default-rule G-mean values exactly reproduced the corresponding previous benchmark results. ROC-AUC and average precision were unchanged between rules because both used the same fitted model and scores.',r'\begin{table}[t]',r'\caption{Benchmark Threshold Control: Mean G-mean across Six Datasets}',r'\label{tab:benchmark_threshold_control}',r'\centering',r'\begin{tabular}{llrrr}',r'\hline',r'Condition & Model & None & SMOTE & Complete\\',r'\hline']
+for (rate,kind),g in summary.groupby(['noise_rate','classifier']):
+ for rule in ('default','selected'):
+  v=g[g.rule==rule].set_index('method').gmean;lines.append(f"{'Supplied' if rate==0 else 'Corrupted'} & {kind.upper()} ({'D' if rule=='default' else 'T'}) & {v['none']:.4f} & {v['smote']:.4f} & {v['proposed']:.4f} "+chr(92)*2)
+lines += [r'\hline',r'\end{tabular}',r'\\ D: default rule; T: validation-selected threshold.',r'\end{table}']
+for base in ('smote','none'):
+ q=t[(t.rule=='selected')&(t.baseline==base)];lines.append(f"After threshold selection, the complete framework achieved higher dataset-level mean G-mean in {int(q.wins.sum())}/36 combinations relative to {'SMOTE' if base=='smote' else 'no intervention'}, with {int(q.ties.sum())} ties. {int((q.holm_p<.05).sum())} of the six comparisons met the 0.05 criterion after Holm adjustment over the full supplementary family of 12 selected-threshold comparisons.")
+lines.append('These results do not isolate augmentation-location quality from weighting. Thresholds selected from inner models may transfer imperfectly to the refitted model, and unchanged supplied benchmark labels are not verified ground truth.');(R/'results_insert.tex').write_text('\n'.join(lines)+'\n')
+print(t.to_string(index=False));print(summary[['noise_rate','classifier','method','rule','gmean']].to_string(index=False))

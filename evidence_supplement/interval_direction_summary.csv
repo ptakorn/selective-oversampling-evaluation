@@ -1,0 +1,5 @@
+classifier,baseline,includes_zero,negative,positive
+lr,smote,6,2,1
+lr,smote_matched_weights,6,2,1
+svm,smote,2,5,2
+svm,smote_matched_weights,2,6,1

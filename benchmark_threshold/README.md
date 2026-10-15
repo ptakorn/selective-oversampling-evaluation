@@ -1,0 +1,11 @@
+# Protocol
+
+Six original benchmarks; three repeated five-fold outer splits with exact-feature duplicates grouped; three inner folds. No intervention, SMOTE and complete framework; LR, RBF SVM and RF; supplied labels and 10% dispersed fitting corruption. Original classifier parameters (selected using default inner G-mean) are reused, not retuned using thresholds.
+
+For each outer task and method, refit the three inner models at the previously selected classifier parameters. Use their held-out scores and supplied labels to choose a common threshold maximizing the unweighted mean of three fold-specific G-means. Candidates: distinct concatenated inner validation scores, descending; predictions positive for score >= threshold; first maximum wins. All-negative rule has G-mean zero and cannot improve a positive maximum. LR/SVM use decision scores, RF positive-class probabilities. The refitted outer model uses both default and selected rules on identical test observations. All splits, corruption, preprocessing, generation, and classifier seeds match prior experiments. Original fixed intervention parameters unchanged.
+
+Threshold search is an additional model-selection stage within inner validation. Selected inner scores are optimistic and not performance estimates. Only outer scores assess performance. Threshold transfer across inner models and the final refit is a limitation, especially with uncalibrated scores. No clean-label guarantee is made for supplied benchmark labels. No injected corruption is applied to validation or test labels.
+
+Statistical unit: dataset mean over all 15 folds. Two-sided Wilcoxon signed-rank with zero differences excluded; supplementary Holm family contains 12 selected-threshold comparisons (two baselines x three classifiers x two conditions). Default comparisons are descriptive here; earlier baseline-family adjustment remains unchanged. Six datasets offer limited power. No equivalence claim. Dataset-averaged performance weights each dataset equally.
+
+Files: raw.csv, dataset_means.csv, summary.csv, paired_statistics.csv, verification.json; per-task checkpoints include OOF scores/fold identities and outer scores/labels for auditing. run.py imports original expanded modules; analyze.py generates report and LaTeX. Python dependencies match expanded/requirements.txt.

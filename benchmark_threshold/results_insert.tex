@@ -1,0 +1,31 @@
+\subsubsection{Benchmark Decision-Threshold Control}
+\label{subsec:benchmark_threshold_control}
+The threshold control was extended to all six benchmarks, three classifiers, and both label conditions using the original outer and inner partitions. Classifier parameters remained those selected by default-rule inner G-mean. For each selected configuration, three inner models provided held-out validation scores. A common threshold maximized the mean of the three fold-specific validation G-means over distinct out-of-fold scores in descending order, with the first maximum retained. Validation labels were unchanged; injected corruption was restricted to fitting observations. The final model was refitted on the full outer training fold and evaluated with both decision rules. Test labels were not used for threshold selection.
+All 1620 final models completed, yielding 3240 decision-rule evaluations. Default-rule G-mean values exactly reproduced the corresponding previous benchmark results. ROC-AUC and average precision were unchanged between rules because both used the same fitted model and scores.
+\begin{table}[t]
+\caption{Benchmark Threshold Control: Mean G-mean across Six Datasets}
+\label{tab:benchmark_threshold_control}
+\centering
+\begin{tabular}{llrrr}
+\hline
+Condition & Model & None & SMOTE & Complete\\
+\hline
+Supplied & LR (D) & 0.8760 & 0.9164 & 0.8953 \\
+Supplied & LR (T) & 0.9105 & 0.9108 & 0.9055 \\
+Supplied & RF (D) & 0.9029 & 0.9303 & 0.9228 \\
+Supplied & RF (T) & 0.9305 & 0.9322 & 0.9294 \\
+Supplied & SVM (D) & 0.9053 & 0.9342 & 0.9252 \\
+Supplied & SVM (T) & 0.9332 & 0.9409 & 0.9329 \\
+Corrupted & LR (D) & 0.8467 & 0.9012 & 0.9081 \\
+Corrupted & LR (T) & 0.8985 & 0.9091 & 0.9062 \\
+Corrupted & RF (D) & 0.8971 & 0.9214 & 0.9233 \\
+Corrupted & RF (T) & 0.9156 & 0.9110 & 0.9241 \\
+Corrupted & SVM (D) & 0.9010 & 0.9320 & 0.9259 \\
+Corrupted & SVM (T) & 0.9256 & 0.9341 & 0.9306 \\
+\hline
+\end{tabular}
+\\ D: default rule; T: validation-selected threshold.
+\end{table}
+After threshold selection, the complete framework achieved higher dataset-level mean G-mean in 19/36 combinations relative to SMOTE, with 0 ties. 0 of the six comparisons met the 0.05 criterion after Holm adjustment over the full supplementary family of 12 selected-threshold comparisons.
+After threshold selection, the complete framework achieved higher dataset-level mean G-mean in 20/36 combinations relative to no intervention, with 0 ties. 0 of the six comparisons met the 0.05 criterion after Holm adjustment over the full supplementary family of 12 selected-threshold comparisons.
+These results do not isolate augmentation-location quality from weighting. Thresholds selected from inner models may transfer imperfectly to the refitted model, and unchanged supplied benchmark labels are not verified ground truth.

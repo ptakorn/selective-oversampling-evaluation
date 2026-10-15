@@ -1,0 +1,17 @@
+{
+  "new_model_fits": 0,
+  "bootstrap_resamples": 5000,
+  "paired_replications": 30,
+  "focus_intervals": 36,
+  "all_intervals": 432,
+  "previous_intervals_reproduced": true,
+  "benchmark_rows": 4320,
+  "successful": 4107,
+  "failed": 213,
+  "baseline_methods": 8,
+  "common_dataset_comparisons": 42,
+  "source_hashes": {
+    "evidence_supplement/inputs/benchmark_raw.csv": "45bde2d09c9c4e578722863a5a7dd73fc842c458a17ef6a20ce92c2e166ca7b9",
+    "evidence_supplement/inputs/targeted_raw.csv": "9af41dbe8bb57440c4d73648330bf7108e03d83c430a0716b80226e185ae3172"
+  }
+}

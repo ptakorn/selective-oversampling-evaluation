@@ -1,0 +1,10 @@
+\subsubsection{Benchmark Decision-Threshold Control}
+A supplementary control compares no intervention, SMOTE, and the complete framework on all six benchmarks, three classifiers, and both fitting-label conditions. It uses the original repeated outer partitions and three-fold inner splits. Classifier parameters remain those selected by default-rule inner-validation G-mean, so the additional selection concerns only the decision threshold.
+
+For each selected configuration, three inner models provide held-out scores. For candidate threshold $\tau$, predictions use $\mathbb{I}(s\geq\tau)$. The selected threshold maximizes
+\begin{equation}
+\frac{1}{3}\sum_{v=1}^{3}G_v(\tau).
+\end{equation}
+Candidates are the distinct concatenated validation scores in descending order; the first maximum resolves ties. Logistic regression and SVM use decision-function scores, while random forest uses positive-class probabilities. Injected corruption is restricted to fitting observations; validation and test labels remain unchanged supplied labels.
+
+The final model is refitted on the full outer training fold and evaluated using both its default rule and the selected threshold. No outer-test labels enter selection. Dataset-level means over 15 folds are compared with two-sided Wilcoxon tests; Holm adjustment covers 12 supplementary selected-threshold comparisons involving two baselines, three classifiers, and two conditions. This family is separate from the previously reported primary baseline family. Threshold transfer from inner models to the refitted model is a limitation, and supplied validation labels are not verified ground truth.
