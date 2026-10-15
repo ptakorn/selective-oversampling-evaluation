@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please identify the exact public commit or release used; cite the article when published."
+title: "Selective Oversampling under Label Noise: Separating Ranking, Decision-Threshold, and Intervention Effects — Reproducibility Package"
+type: software
+version: "2026.10.15"
+repository-code: "https://github.com/ptakorn/ambiguity-guided-selective-oversampling"
+authors:
+  - family-names: Prexawanprasut
+    given-names: Takorn
+    affiliation: Sukhothai Thammathirat Open University
+license: MIT
+keywords:
+  - class imbalance
+  - selective oversampling
+  - label noise
+  - decision thresholds
+  - reproducibility

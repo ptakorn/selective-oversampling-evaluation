@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-15",
+  "python_source_files": 32,
+  "old_verifier": "passed",
+  "new_verifier": "passed",
+  "paired_intervals_recomputed": 864,
+  "endpoint_retention_cases_verified": 270,
+  "external_preflight_cases": 9,
+  "frozen_runner_hashes_preserved": true,
+  "original_benchmark_failures_retained": 213,
+  "full_refit_during_packaging": false,
+  "public_push_performed": false,
+  "added_analysis_entry_points": "passed",
+  "combined_supplement_pages": 15
+}
