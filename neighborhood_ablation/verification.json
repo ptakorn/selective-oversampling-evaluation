@@ -1,0 +1,10 @@
+{
+  "grid": {
+    "rows": 1890,
+    "max_gmean_difference": 0.0
+  },
+  "stress": {
+    "rows": 510,
+    "max_gmean_difference": 0.0
+  }
+}

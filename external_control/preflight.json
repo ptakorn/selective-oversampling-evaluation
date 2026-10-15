@@ -1,0 +1,77 @@
+{
+  "scope": "Fitting-only structural checks; no validation/test performance inspected",
+  "checks": [
+    {
+      "geometry": "gaussian",
+      "corruption": "clean",
+      "status": "passed",
+      "original_retained": 735,
+      "synthetic_retained": 631,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "gaussian",
+      "corruption": "dispersed",
+      "status": "passed",
+      "original_retained": 457,
+      "synthetic_retained": 335,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "gaussian",
+      "corruption": "boundary",
+      "status": "passed",
+      "original_retained": 854,
+      "synthetic_retained": 590,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "moons",
+      "corruption": "clean",
+      "status": "passed",
+      "original_retained": 1000,
+      "synthetic_retained": 820,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "moons",
+      "corruption": "dispersed",
+      "status": "passed",
+      "original_retained": 543,
+      "synthetic_retained": 428,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "moons",
+      "corruption": "boundary",
+      "status": "passed",
+      "original_retained": 956,
+      "synthetic_retained": 648,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "circles",
+      "corruption": "clean",
+      "status": "passed",
+      "original_retained": 990,
+      "synthetic_retained": 818,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "circles",
+      "corruption": "dispersed",
+      "status": "passed",
+      "original_retained": 556,
+      "synthetic_retained": 432,
+      "plain_implementation_exact": true
+    },
+    {
+      "geometry": "circles",
+      "corruption": "boundary",
+      "status": "passed",
+      "original_retained": 924,
+      "synthetic_retained": 634,
+      "plain_implementation_exact": true
+    }
+  ]
+}

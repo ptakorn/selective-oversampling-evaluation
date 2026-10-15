@@ -1,0 +1,31 @@
+{
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "imbalanced-learn": "0.14.2",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8"
+  },
+  "public_implementation_hashes": {
+    "SMOTEENN": "27f6757234bb7059c36dd14e746c83c51c97af6c3a4f97d40a9ff1e643ece174",
+    "SMOTE": "66265478539cccc0c9ee943da8d5e72ec3bf740562b36230407a18d796c179ce",
+    "EditedNearestNeighbours": "3dec20654789eeff5052611aee5288df21fdddbcb3ca7da3cd969d39793fc6c0"
+  },
+  "references": [
+    "https://imbalanced-learn.org/stable/references/generated/imblearn.combine.SMOTEENN.html",
+    "https://imbalanced-learn.org/stable/references/generated/imblearn.under_sampling.EditedNearestNeighbours.html",
+    "https://www.kdd.org/exploration_files/batista.pdf"
+  ],
+  "wrnd_source_audit": {
+    "commit": "f69a5c71fdff7dd3ff9b52c9d96801c3a931cc99",
+    "files": {
+      "expanded/vendor/WRND/nan_zhou.py": "0cb7c773e88e3effa436d55868a1e987607a68a13d2d38a5e47083dc09478d09",
+      "expanded/vendor/WRND/all_smote_v5.py": "8f5c8f4360a92ef3045378cf17d23b759b132da3adcadf97c7782c4a305f16ef",
+      "expanded/wrnd_generation.py": "b8b4f435a574e768c67b261ccfd1fa8200bb418193d6998fcaab160d7ce0fdcd"
+    },
+    "status": "Full paper-to-code reconciliation unresolved; no new verified WRND fit claimed"
+  },
+  "frozen_code_unchanged": true
+}

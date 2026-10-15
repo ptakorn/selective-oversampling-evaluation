@@ -1,0 +1,25 @@
+\subsubsection{Adaptive versus Fixed Neighborhoods}
+\label{subsec:adaptive_fixed_ablation}
+To isolate neighborhood membership selection, the adaptive construction was replaced by fixed nearest-neighbor counts of $5$, $10$, and $20$, with $k=10$ at the base scale. Distance weighting, reliability assessment, reciprocal support, intervention thresholds, allocation, and training weights were unchanged. The adaptive reference radius was retained only for the expansion-ratio adequacy test; this comparison therefore isolates membership selection rather than removing every radius-dependent mechanism.
+Both variants used identical synthetic observations, corruption realizations, and random seeds. Adaptive reruns reproduced all 2400 previously reported synthetic G-mean values exactly. Benchmark evaluation used the same partitions and corruption, with separate inner classifier selection for the fixed variant.
+Across the 63 synthetic grid settings, mean G-mean was 0.7960 for adaptive and 0.7949 for fixed neighborhoods. Adaptive selection achieved higher setting-level means in 41/63 settings. These averages summarize heterogeneous conditions and do not establish uniform superiority.
+Across the 17 stress settings, mean G-mean was 0.8677 for adaptive and 0.8661 for fixed neighborhoods. Adaptive selection achieved higher setting-level means in 14/17 settings. These averages summarize heterogeneous conditions and do not establish uniform superiority.
+\begin{table}[t]
+\caption{Adaptive minus Fixed Neighborhoods: Dataset-Level G-mean Comparisons}
+\label{tab:adaptive_fixed_benchmark}
+\centering
+\begin{tabular}{llrrr}
+\hline
+Condition & Model & Mean $\Delta$ & Raw $p$ & Holm $p$\\
+\hline
+Supplied & LR & -0.00937 & 0.8438 & 1.0000 \\
+Supplied & RF & +0.00840 & 0.0312 & 0.1875 \\
+Supplied & SVM & +0.00019 & 0.8750 & 1.0000 \\
+Corrupted & LR & -0.00113 & 0.5625 & 1.0000 \\
+Corrupted & RF & +0.00416 & 0.2188 & 1.0000 \\
+Corrupted & SVM & -0.00128 & 0.4375 & 1.0000 \\
+\hline
+\end{tabular}
+\end{table}
+Each dataset contributes its mean over 15 outer folds. Two-sided Wilcoxon tests and Holm adjustment apply to the six supplementary ablation comparisons. Individual synthetic confidence intervals are reported separately and are not simultaneous intervals.
+No benchmark comparison met the 0.05 significance criterion after adjustment. Adaptation showed condition-dependent benefits rather than a consistent advantage over fixed neighborhoods.

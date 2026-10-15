@@ -1,0 +1,87 @@
+{
+  "frozen_at_utc": "2026-10-15T05:10:18.607712+00:00",
+  "stage": "Post-result external-method follow-up; selection after implementation feasibility, before comparative held-out results",
+  "external_method": "imbalanced-learn SMOTEENN",
+  "implementation_version": "0.14.2",
+  "preflight": "9 fitting-only checks passed; exact equality with uninstrumented public class; no validation/test performance used",
+  "wrnd_gate": "Not treated as verified: full algorithm-to-code reconciliation unresolved. Source natural-neighbor search starts at rank 2 and caps at rank 5; density and wrapper/filtering semantics require reconciliation with full article. No claim these are confirmed paper errors.",
+  "methods": [
+    "smoteenn",
+    "smote_matched_count",
+    "smote_matched_retention"
+  ],
+  "reused_methods": [
+    "none",
+    "smote"
+  ],
+  "data_roles": {
+    "fitting": 1000,
+    "validation": 2000,
+    "test": 5000
+  },
+  "geometries": [
+    "gaussian",
+    "moons",
+    "circles"
+  ],
+  "corruption": [
+    "clean",
+    "dispersed",
+    "boundary"
+  ],
+  "replications": 30,
+  "SMOTE": {
+    "sampling_strategy": 1.0,
+    "k_neighbors": 5,
+    "seed": "Same role-20 seed as original targeted extension"
+  },
+  "ENN": {
+    "sampling_strategy": "all",
+    "n_neighbors": 3,
+    "kind_sel": "all"
+  },
+  "control_count": "SMOTE on full original fitting data, requested synthetic count equal to post-ENN surviving synthetic count",
+  "control_retention": "Same count-matched synthetic observations; original observations restricted to exact SMOTEENN surviving original index set; no ENN on control synthetics",
+  "classifiers": {
+    "LR": {
+      "C": 1,
+      "max_iter": 2000
+    },
+    "RBF_SVM": {
+      "C": 1,
+      "gamma": "1/d"
+    }
+  },
+  "threshold": "Distinct independent clean-validation scores, descending, first maximum G-mean; no refit",
+  "metrics": [
+    "gmean",
+    "auc",
+    "ap"
+  ],
+  "bootstrap": {
+    "resamples": 5000,
+    "confidence": 0.95,
+    "seed": 90120261016,
+    "scope": "Paired replications within setting; individual exploratory percentile intervals, not simultaneous or adjusted significance tests"
+  },
+  "comparators": [
+    "none",
+    "smote",
+    "smote_matched_count",
+    "smote_matched_retention"
+  ],
+  "failures": "Record; no substitutes/artificial scores; paired summaries require all 30 replications",
+  "source_raw_sha256": "9af41dbe8bb57440c4d73648330bf7108e03d83c430a0716b80226e185ae3172",
+  "software": {
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0"
+  },
+  "code_sha256": {
+    "resampling.py": "cc81596cff01e4cd6db13c4fae4c126ed940747fc3563f5c68145efcf8476e1e",
+    "protocol.py": "681cabfa36cae13771bf56f726a0897966c047e75c4d40d82444a78e121a654d",
+    "run.py": "e154f5fdbdc0a99a38fe0d10ec4fe17bf6dff560984c22b1604cc008aa540bcf",
+    "preflight.py": "e11daa6b7fdf60f2e681cd4845c78f35c4aad05757c2b6e151c991c8e8f0bd7f"
+  }
+}

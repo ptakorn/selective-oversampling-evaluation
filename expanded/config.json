@@ -1,0 +1,156 @@
+{
+  "stage": "expanded fixed-intervention evaluation; not complete Section IV",
+  "benchmark_datasets": [
+    "wdbc",
+    "banknote",
+    "spambase",
+    "ionosphere",
+    "ecoli_imu",
+    "glass7"
+  ],
+  "outer_folds": 5,
+  "repetitions": 3,
+  "inner_folds": 3,
+  "duplicate_policy": "identical selected feature vectors stay in same fold through StratifiedGroupKFold",
+  "noise": [
+    0,
+    0.1
+  ],
+  "trusted_inner_validation": true,
+  "classifiers": {
+    "lr": {
+      "C": [
+        0.01,
+        0.1,
+        1,
+        10,
+        100
+      ]
+    },
+    "svm": {
+      "C": [
+        0.1,
+        1,
+        10
+      ],
+      "gamma": "1/effective_d"
+    },
+    "rf": {
+      "trees": 300,
+      "min_samples_leaf": [
+        1,
+        3,
+        5
+      ]
+    }
+  },
+  "intervention_tuning": false,
+  "synthetic": {
+    "ir": [
+      5,
+      10,
+      20
+    ],
+    "separation": [
+      1,
+      2,
+      3
+    ],
+    "noise": [
+      0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "replications": 30,
+    "n": 2000,
+    "test_n": 10000,
+    "classifiers": [
+      "lr C=1"
+    ],
+    "methods": [
+      "none",
+      "smote",
+      "borderline",
+      "adasyn",
+      "proposed",
+      "no_downweight"
+    ]
+  },
+  "wrnd": "author code pinned f69a5c71fdff7dd3ff9b52c9d96801c3a931cc99; pure-function compatibility adapter; errors recorded without substitution",
+  "pending": [
+    "joint intervention search",
+    "prior framework baseline",
+    "synthetic multi-classifier evaluation",
+    "corrupted-validation sensitivity",
+    "full component ablations",
+    "formal cross-dataset inference",
+    "runtime scaling",
+    "subgroup and label-noise interactions"
+  ],
+  "stress": {
+    "replications": 30,
+    "settings": 17,
+    "nvalues": [
+      500,
+      1000,
+      2000
+    ],
+    "subgroup_gamma": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "remote_gamma": 0.05,
+    "outlier_fraction": [
+      0.05,
+      0.1
+    ],
+    "dimensions": [
+      2,
+      10,
+      50
+    ],
+    "classifier": "LR C=1",
+    "corruption": "none; training feature contamination for outlier experiment only"
+  },
+  "threshold_control": {
+    "replications": 30,
+    "training": 2000,
+    "trusted_validation": 3000,
+    "test": 10000,
+    "ir": 10,
+    "separation": 2,
+    "training_noise": [
+      0,
+      0.1
+    ],
+    "mechanisms": [
+      "clean",
+      "dispersed",
+      "localized"
+    ],
+    "classifier": "LR C=1",
+    "threshold": "all distinct validation scores maximizing G-mean; fixed model compared at threshold zero",
+    "purpose": "supplementary control; no test-driven threshold selection"
+  },
+  "execution_counts": {
+    "synthetic_grid": 11340,
+    "stress": 3060,
+    "threshold_model_fits": 360,
+    "benchmark_attempted_final_fits": 4320,
+    "benchmark_success": 4107,
+    "benchmark_failure": 213
+  },
+  "integrity": {
+    "methods.py": "151645830a7d3667844fe31365dfe7fa5e5e43bb05976bcd5c61cc22ffe4ebd3",
+    "setup_wrnd.py": "4acc809049e96185eebc5442926731fe1f86fccfb9e91a473fc4e99f7c61b92f",
+    "make_report.py": "ec1e7294e26e17c2e1a590e8594f6ac47e912f54bf67be0979aa91ff1a52d776",
+    "download_data.py": "ac89b3d42465d9574044c286ede813f47caca952aefc5f001acd506896fd9b5f",
+    "run_benchmarks.py": "97d4b731fc5fdf5b9b3fb7fd870c9c1d529cba661c293b61441962cf02548145",
+    "run_stress.py": "b28fa5c5b0b089c9dc3fff165121baf3094afd554fa342971c2d2be2db8ca369",
+    "run_synthetic_grid.py": "4eadde854feb5f91b6f3b35ebc2dc0f71b01a2d8cc49ef4ff00b68ea54f8fe8e",
+    "run_threshold_control.py": "4138ac1770e871e70d67bc2516dc9a2c7a8cc564847880e2dcb3633c5c631d4c",
+    "analyze_results.py": "e8799536b0b820277b1da2cd7d86d8a678880b0a289d7228dec19adf80f1edbc"
+  }
+}

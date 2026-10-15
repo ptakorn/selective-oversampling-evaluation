@@ -1,0 +1,72 @@
+[
+  {
+    "name": "wdbc",
+    "uci_id": 17,
+    "n": 569,
+    "d": 30,
+    "positive": "malignant",
+    "n1": 212,
+    "n0": 357,
+    "ir": 1.6839622641509433
+  },
+  {
+    "name": "banknote",
+    "uci_id": 267,
+    "n": 1372,
+    "d": 4,
+    "positive": "class 1",
+    "n1": 610,
+    "n0": 762,
+    "sha256": "1e2acd9a2085fadf3d8145c12d3d22af853320d52294a6590c2eaf75fdc05227",
+    "url": "https://archive.ics.uci.edu/static/public/267/banknote+authentication.zip",
+    "ir": 1.2491803278688525
+  },
+  {
+    "name": "spambase",
+    "uci_id": 94,
+    "n": 4601,
+    "d": 57,
+    "positive": "spam",
+    "n1": 1813,
+    "n0": 2788,
+    "sha256": "813ac1df8effac70463c09c9c4b11e8803eefcab54771af66150852bcdcd1636",
+    "url": "https://archive.ics.uci.edu/static/public/94/spambase.zip",
+    "ir": 1.5377826806398236
+  },
+  {
+    "name": "ionosphere",
+    "uci_id": 52,
+    "n": 351,
+    "d": 32,
+    "positive": "bad radar return; first binary and second constant features removed",
+    "n1": 126,
+    "n0": 225,
+    "sha256": "4d218ece62756c99659011a13052d06464f13cb2b3d0410ce2aef16de1403860",
+    "url": "https://archive.ics.uci.edu/static/public/52/ionosphere.zip",
+    "ir": 1.7857142857142858
+  },
+  {
+    "name": "ecoli_imu",
+    "uci_id": 39,
+    "n": 336,
+    "d": 5,
+    "positive": "imU vs rest; binary lip/chg removed",
+    "n1": 35,
+    "n0": 301,
+    "sha256": "a6580298b76828674a5197152da7a99f4bd09bc589dbf1142900f1698882ec32",
+    "url": "https://archive.ics.uci.edu/static/public/39/ecoli.zip",
+    "ir": 8.6
+  },
+  {
+    "name": "glass7",
+    "uci_id": 42,
+    "n": 214,
+    "d": 9,
+    "positive": "class 7 (headlamps) vs rest; ID removed",
+    "n1": 29,
+    "n0": 185,
+    "sha256": "499c07a17115bf63100bb19cc1fdefad7f464bf5dc2b168930fa2071fd6b6e65",
+    "url": "https://archive.ics.uci.edu/static/public/42/glass+identification.zip",
+    "ir": 6.379310344827586
+  }
+]

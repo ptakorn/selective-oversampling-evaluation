@@ -1,0 +1,7 @@
+name,uci_id,n,d,positive,n1,n0,ir,sha256,url
+wdbc,17,569,30,malignant,212,357,1.6839622641509433,,
+banknote,267,1372,4,class 1,610,762,1.2491803278688525,1e2acd9a2085fadf3d8145c12d3d22af853320d52294a6590c2eaf75fdc05227,https://archive.ics.uci.edu/static/public/267/banknote+authentication.zip
+spambase,94,4601,57,spam,1813,2788,1.5377826806398236,813ac1df8effac70463c09c9c4b11e8803eefcab54771af66150852bcdcd1636,https://archive.ics.uci.edu/static/public/94/spambase.zip
+ionosphere,52,351,32,bad radar return; first binary and second constant features removed,126,225,1.7857142857142858,4d218ece62756c99659011a13052d06464f13cb2b3d0410ce2aef16de1403860,https://archive.ics.uci.edu/static/public/52/ionosphere.zip
+ecoli_imu,39,336,5,imU vs rest; binary lip/chg removed,35,301,8.6,a6580298b76828674a5197152da7a99f4bd09bc589dbf1142900f1698882ec32,https://archive.ics.uci.edu/static/public/39/ecoli.zip
+glass7,42,214,9,class 7 (headlamps) vs rest; ID removed,29,185,6.379310344827586,499c07a17115bf63100bb19cc1fdefad7f464bf5dc2b168930fa2071fd6b6e65,https://archive.ics.uci.edu/static/public/42/glass+identification.zip

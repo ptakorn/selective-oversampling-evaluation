@@ -1,0 +1,17 @@
+classifier,rule,baseline,above_zero,below_zero,includes_zero
+lr,default,none,9,0,0
+lr,default,smote,3,2,4
+lr,default,smote_matched_count,3,4,2
+lr,default,smote_matched_retention,4,0,5
+lr,selected,none,0,2,7
+lr,selected,smote,1,0,8
+lr,selected,smote_matched_count,0,3,6
+lr,selected,smote_matched_retention,1,0,8
+svm,default,none,7,2,0
+svm,default,smote,0,6,3
+svm,default,smote_matched_count,1,4,4
+svm,default,smote_matched_retention,5,0,4
+svm,selected,none,3,5,1
+svm,selected,smote,0,5,4
+svm,selected,smote_matched_count,0,5,4
+svm,selected,smote_matched_retention,3,2,4

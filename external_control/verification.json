@@ -1,0 +1,14 @@
+{
+  "new_models": 1620,
+  "new_evaluations": 3240,
+  "reused_evaluations": 2160,
+  "new_failure_rows": 0,
+  "structural_audits": 270,
+  "count_matching_verified": true,
+  "original_retention_matching_verified": true,
+  "ranking_rule_invariance_verified": true,
+  "paired_intervals": 432,
+  "selected_gmean_intervals": 72,
+  "warnings": 0,
+  "inference": "Exploratory individual paired percentile bootstrap intervals; descriptive setting averages; no general superiority or noise-identifiability claim"
+}
