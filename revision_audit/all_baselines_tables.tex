@@ -1,0 +1,125 @@
+\begin{table}[t]
+\caption{All Baselines: LR, Supplied Labels}
+\label{tab:all_baselines_lr_0}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.8760 & 0.9551 & 0.8851 \\
+Random oversampling & 6 & 0.9150 & 0.9558 & 0.8879 \\
+SMOTE & 6 & 0.9164 & 0.9542 & 0.8890 \\
+Borderline-SMOTE1 & 6 & 0.9136 & 0.9531 & 0.8781 \\
+ADASYN & 5 & 0.8970 & 0.9463 & 0.8616 \\
+Complete & 6 & 0.8953 & 0.9544 & 0.8908 \\
+No downweighting & 6 & 0.8920 & 0.9544 & 0.8889 \\
+WRND adapter & 3 & 0.9287 & 0.9583 & 0.8424 \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize $D$: datasets with all 15 outer folds completed. Means weight datasets equally. Different $D$ values preclude direct interpretation as a common-dataset ranking; use paired results for comparisons.
+\end{table}
+
+\begin{table}[t]
+\caption{All Baselines: RF, Supplied Labels}
+\label{tab:all_baselines_rf_0}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.9029 & 0.9791 & 0.9350 \\
+Random oversampling & 6 & 0.9279 & 0.9774 & 0.9204 \\
+SMOTE & 6 & 0.9303 & 0.9790 & 0.9233 \\
+Borderline-SMOTE1 & 6 & 0.9215 & 0.9783 & 0.9210 \\
+ADASYN & 5 & 0.9170 & 0.9712 & 0.8992 \\
+Complete & 6 & 0.9228 & 0.9795 & 0.9262 \\
+No downweighting & 6 & 0.9153 & 0.9794 & 0.9296 \\
+WRND adapter & 3 & 0.8715 & 0.9711 & 0.8740 \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize $D$: datasets with all 15 outer folds completed. Means weight datasets equally. Different $D$ values preclude direct interpretation as a common-dataset ranking; use paired results for comparisons.
+\end{table}
+
+\begin{table}[t]
+\caption{All Baselines: SVM, Supplied Labels}
+\label{tab:all_baselines_svm_0}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.9053 & 0.9760 & 0.9231 \\
+Random oversampling & 6 & 0.9390 & 0.9800 & 0.9262 \\
+SMOTE & 6 & 0.9342 & 0.9799 & 0.9276 \\
+Borderline-SMOTE1 & 6 & 0.9292 & 0.9780 & 0.9168 \\
+ADASYN & 5 & 0.9296 & 0.9752 & 0.9048 \\
+Complete & 6 & 0.9252 & 0.9787 & 0.9228 \\
+No downweighting & 6 & 0.9276 & 0.9793 & 0.9232 \\
+WRND adapter & 3 & 0.9034 & 0.9750 & 0.8729 \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize $D$: datasets with all 15 outer folds completed. Means weight datasets equally. Different $D$ values preclude direct interpretation as a common-dataset ranking; use paired results for comparisons.
+\end{table}
+
+\begin{table}[t]
+\caption{All Baselines: LR, 10\% Fitting-Label Corruption}
+\label{tab:all_baselines_lr_10}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.8467 & 0.9466 & 0.8740 \\
+Random oversampling & 6 & 0.8980 & 0.9499 & 0.8712 \\
+SMOTE & 6 & 0.9012 & 0.9487 & 0.8772 \\
+Borderline-SMOTE1 & 6 & 0.8715 & 0.9432 & 0.8556 \\
+ADASYN & 6 & 0.8848 & 0.9481 & 0.8667 \\
+Complete & 6 & 0.9081 & 0.9509 & 0.8830 \\
+No downweighting & 6 & 0.9090 & 0.9526 & 0.8868 \\
+WRND adapter & 3 & 0.9188 & 0.9547 & 0.8263 \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize $D$: datasets with all 15 outer folds completed. Means weight datasets equally. Different $D$ values preclude direct interpretation as a common-dataset ranking; use paired results for comparisons.
+\end{table}
+
+\begin{table}[t]
+\caption{All Baselines: RF, 10\% Fitting-Label Corruption}
+\label{tab:all_baselines_rf_10}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.8971 & 0.9667 & 0.9155 \\
+Random oversampling & 6 & 0.9046 & 0.9618 & 0.8989 \\
+SMOTE & 6 & 0.9214 & 0.9653 & 0.9075 \\
+Borderline-SMOTE1 & 6 & 0.9040 & 0.9580 & 0.8855 \\
+ADASYN & 6 & 0.9100 & 0.9587 & 0.8891 \\
+Complete & 6 & 0.9233 & 0.9729 & 0.9192 \\
+No downweighting & 6 & 0.9170 & 0.9724 & 0.9206 \\
+WRND adapter & 3 & 0.8861 & 0.9577 & 0.8592 \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize $D$: datasets with all 15 outer folds completed. Means weight datasets equally. Different $D$ values preclude direct interpretation as a common-dataset ranking; use paired results for comparisons.
+\end{table}
+
+\begin{table}[t]
+\caption{All Baselines: SVM, 10\% Fitting-Label Corruption}
+\label{tab:all_baselines_svm_10}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.9010 & 0.9655 & 0.9135 \\
+Random oversampling & 6 & 0.9316 & 0.9760 & 0.9105 \\
+SMOTE & 6 & 0.9320 & 0.9766 & 0.9131 \\
+Borderline-SMOTE1 & 6 & 0.8975 & 0.9539 & 0.8632 \\
+ADASYN & 6 & 0.9192 & 0.9667 & 0.8922 \\
+Complete & 6 & 0.9259 & 0.9767 & 0.9145 \\
+No downweighting & 6 & 0.9271 & 0.9794 & 0.9216 \\
+WRND adapter & 3 & 0.9074 & 0.9711 & 0.8619 \\
+\hline
+\end{tabular}
+\par\smallskip\footnotesize $D$: datasets with all 15 outer folds completed. Means weight datasets equally. Different $D$ values preclude direct interpretation as a common-dataset ranking; use paired results for comparisons.
+\end{table}

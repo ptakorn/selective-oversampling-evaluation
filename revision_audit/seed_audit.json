@@ -1,0 +1,5 @@
+{
+  "development_evaluation_seed_intersection": [],
+  "grid_reused_role_seed_groups": 120,
+  "note": "Disjoint RNG seeds do not make grid conditions independent. Noise levels share data deliberately; some distinct IR/separation cells also reuse RNG seeds. Different configurations transform those streams differently. No claim of preregistration follows from this audit."
+}

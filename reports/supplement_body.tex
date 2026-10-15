@@ -1,0 +1,714 @@
+\section*{Supplementary Evidence}
+This supplement reports existing fitted-model results. No new model fits were performed for these tables. Synthetic intervals use paired replications; benchmark comparisons use dataset means, not folds as independent observations.
+\subsection*{S1. Paired intervals for the targeted extension}
+Differences are Complete minus comparator. Each setting has 30 paired replications. Percentile intervals use 5000 paired bootstrap resamples. They are exploratory individual 95\% intervals, with no simultaneous-coverage or multiplicity-adjusted significance claim. Full default-rule, ranking and additional-comparator intervals are included in the accompanying CSV.
+\begin{table}[htbp]
+\caption{Selected-threshold G-mean differences: LR}
+\centering\small
+\begin{tabular}{llrr}
+\hline
+Geometry / noise & Comparator & Mean difference & Individual 95\% CI\\
+\hline
+Gaussian / clean & SMOTE & -0.00001 & $[-0.00184, +0.00190]$ \\
+Gaussian / clean & Matched SMOTE & -0.00061 & $[-0.00272, +0.00143]$ \\
+Gaussian / dispersed & SMOTE & +0.00016 & $[-0.00233, +0.00260]$ \\
+Gaussian / dispersed & Matched SMOTE & -0.00002 & $[-0.00254, +0.00236]$ \\
+Gaussian / boundary & SMOTE & +0.00002 & $[-0.00163, +0.00176]$ \\
+Gaussian / boundary & Matched SMOTE & -0.00015 & $[-0.00160, +0.00135]$ \\
+Moons / clean & SMOTE & -0.01222 & $[-0.01685, -0.00756]$ \\
+Moons / clean & Matched SMOTE & -0.01247 & $[-0.01703, -0.00789]$ \\
+Moons / dispersed & SMOTE & +0.00557 & $[+0.00190, +0.00987]$ \\
+Moons / dispersed & Matched SMOTE & +0.00576 & $[+0.00223, +0.00988]$ \\
+Moons / boundary & SMOTE & -0.01194 & $[-0.02295, -0.00397]$ \\
+Moons / boundary & Matched SMOTE & -0.01466 & $[-0.02570, -0.00635]$ \\
+Circles / clean & SMOTE & -0.00086 & $[-0.00397, +0.00228]$ \\
+Circles / clean & Matched SMOTE & -0.00139 & $[-0.00466, +0.00179]$ \\
+Circles / dispersed & SMOTE & -0.00229 & $[-0.00579, +0.00090]$ \\
+Circles / dispersed & Matched SMOTE & -0.00122 & $[-0.00449, +0.00194]$ \\
+Circles / boundary & SMOTE & -0.00020 & $[-0.00168, +0.00116]$ \\
+Circles / boundary & Matched SMOTE & -0.00047 & $[-0.00178, +0.00073]$ \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{Selected-threshold G-mean differences: SVM}
+\centering\small
+\begin{tabular}{llrr}
+\hline
+Geometry / noise & Comparator & Mean difference & Individual 95\% CI\\
+\hline
+Gaussian / clean & SMOTE & -0.00516 & $[-0.00971, -0.00082]$ \\
+Gaussian / clean & Matched SMOTE & -0.00658 & $[-0.01101, -0.00222]$ \\
+Gaussian / dispersed & SMOTE & +0.00439 & $[-0.00122, +0.01057]$ \\
+Gaussian / dispersed & Matched SMOTE & -0.00245 & $[-0.00596, +0.00104]$ \\
+Gaussian / boundary & SMOTE & +0.00062 & $[-0.00323, +0.00506]$ \\
+Gaussian / boundary & Matched SMOTE & -0.00690 & $[-0.01045, -0.00343]$ \\
+Moons / clean & SMOTE & -0.00121 & $[-0.00215, -0.00031]$ \\
+Moons / clean & Matched SMOTE & -0.00100 & $[-0.00193, -0.00011]$ \\
+Moons / dispersed & SMOTE & +0.00550 & $[+0.00307, +0.00805]$ \\
+Moons / dispersed & Matched SMOTE & +0.00355 & $[+0.00182, +0.00537]$ \\
+Moons / boundary & SMOTE & -0.01869 & $[-0.02181, -0.01559]$ \\
+Moons / boundary & Matched SMOTE & -0.02007 & $[-0.02333, -0.01687]$ \\
+Circles / clean & SMOTE & -0.00129 & $[-0.00226, -0.00031]$ \\
+Circles / clean & Matched SMOTE & -0.00119 & $[-0.00212, -0.00027]$ \\
+Circles / dispersed & SMOTE & +0.00502 & $[+0.00071, +0.01085]$ \\
+Circles / dispersed & Matched SMOTE & +0.00000 & $[-0.00109, +0.00115]$ \\
+Circles / boundary & SMOTE & -0.00330 & $[-0.00609, -0.00107]$ \\
+Circles / boundary & Matched SMOTE & -0.00334 & $[-0.00592, -0.00121]$ \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\subsection*{S2. All benchmark baselines}
+Only datasets with all 15 outer folds completed for a method enter its mean. $D$ counts such datasets. Different $D$ values indicate different populations; these method-wise averages must not be interpreted as a common-dataset ranking. WRND denotes the documented author-code adapter.
+\begin{table}[htbp]
+\caption{All methods: LR, supplied labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.8760 & 0.9551 & 0.8851 \\
+Random oversampling & 6 & 0.9150 & 0.9558 & 0.8879 \\
+SMOTE & 6 & 0.9164 & 0.9542 & 0.8890 \\
+Borderline-SMOTE1 & 6 & 0.9136 & 0.9531 & 0.8781 \\
+ADASYN & 5 & 0.8970 & 0.9463 & 0.8616 \\
+Complete & 6 & 0.8953 & 0.9544 & 0.8908 \\
+No downweighting & 6 & 0.8920 & 0.9544 & 0.8889 \\
+WRND adapter & 3 & 0.9287 & 0.9583 & 0.8424 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{All methods: RF, supplied labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.9029 & 0.9791 & 0.9350 \\
+Random oversampling & 6 & 0.9279 & 0.9774 & 0.9204 \\
+SMOTE & 6 & 0.9303 & 0.9790 & 0.9233 \\
+Borderline-SMOTE1 & 6 & 0.9215 & 0.9783 & 0.9210 \\
+ADASYN & 5 & 0.9170 & 0.9712 & 0.8992 \\
+Complete & 6 & 0.9228 & 0.9795 & 0.9262 \\
+No downweighting & 6 & 0.9153 & 0.9794 & 0.9296 \\
+WRND adapter & 3 & 0.8715 & 0.9711 & 0.8740 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{All methods: SVM, supplied labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.9053 & 0.9760 & 0.9231 \\
+Random oversampling & 6 & 0.9390 & 0.9800 & 0.9262 \\
+SMOTE & 6 & 0.9342 & 0.9799 & 0.9276 \\
+Borderline-SMOTE1 & 6 & 0.9292 & 0.9780 & 0.9168 \\
+ADASYN & 5 & 0.9296 & 0.9752 & 0.9048 \\
+Complete & 6 & 0.9252 & 0.9787 & 0.9228 \\
+No downweighting & 6 & 0.9276 & 0.9793 & 0.9232 \\
+WRND adapter & 3 & 0.9034 & 0.9750 & 0.8729 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{All methods: LR, 10 percent fitting-label corruption}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.8467 & 0.9466 & 0.8740 \\
+Random oversampling & 6 & 0.8980 & 0.9499 & 0.8712 \\
+SMOTE & 6 & 0.9012 & 0.9487 & 0.8772 \\
+Borderline-SMOTE1 & 6 & 0.8715 & 0.9432 & 0.8556 \\
+ADASYN & 6 & 0.8848 & 0.9481 & 0.8667 \\
+Complete & 6 & 0.9081 & 0.9509 & 0.8830 \\
+No downweighting & 6 & 0.9090 & 0.9526 & 0.8868 \\
+WRND adapter & 3 & 0.9188 & 0.9547 & 0.8263 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{All methods: RF, 10 percent fitting-label corruption}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.8971 & 0.9667 & 0.9155 \\
+Random oversampling & 6 & 0.9046 & 0.9618 & 0.8989 \\
+SMOTE & 6 & 0.9214 & 0.9653 & 0.9075 \\
+Borderline-SMOTE1 & 6 & 0.9040 & 0.9580 & 0.8855 \\
+ADASYN & 6 & 0.9100 & 0.9587 & 0.8891 \\
+Complete & 6 & 0.9233 & 0.9729 & 0.9192 \\
+No downweighting & 6 & 0.9170 & 0.9724 & 0.9206 \\
+WRND adapter & 3 & 0.8861 & 0.9577 & 0.8592 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{All methods: SVM, 10 percent fitting-label corruption}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Method & $D$ & G-mean & ROC-AUC & AP\\
+\hline
+No intervention & 6 & 0.9010 & 0.9655 & 0.9135 \\
+Random oversampling & 6 & 0.9316 & 0.9760 & 0.9105 \\
+SMOTE & 6 & 0.9320 & 0.9766 & 0.9131 \\
+Borderline-SMOTE1 & 6 & 0.8975 & 0.9539 & 0.8632 \\
+ADASYN & 6 & 0.9192 & 0.9667 & 0.8922 \\
+Complete & 6 & 0.9259 & 0.9767 & 0.9145 \\
+No downweighting & 6 & 0.9271 & 0.9794 & 0.9216 \\
+WRND adapter & 3 & 0.9074 & 0.9711 & 0.8619 \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\subsection*{S3. Comparisons on common complete datasets}
+Each row restricts Complete and its comparator to the same datasets, with 15 complete outer folds for both. Differences are Complete minus comparator. No new significance test is introduced by these descriptive tables.
+\begin{table}[htbp]
+\caption{Paired means on common datasets: LR, supplied labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Comparator & $D$ & $\Delta$ G-mean & $\Delta$ ROC-AUC & $\Delta$ AP\\
+\hline
+ADASYN & 5 & -0.02025 & -0.00102 & +0.00745 \\
+Borderline-SMOTE1 & 6 & -0.01826 & +0.00129 & +0.01270 \\
+No downweighting & 6 & +0.00327 & -0.00001 & +0.00199 \\
+No intervention & 6 & +0.01934 & -0.00073 & +0.00578 \\
+Random oversampling & 6 & -0.01969 & -0.00140 & +0.00292 \\
+SMOTE & 6 & -0.02107 & +0.00021 & +0.00189 \\
+WRND adapter & 3 & -0.04762 & +0.00239 & +0.00235 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{Paired means on common datasets: RF, supplied labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Comparator & $D$ & $\Delta$ G-mean & $\Delta$ ROC-AUC & $\Delta$ AP\\
+\hline
+ADASYN & 5 & -0.00882 & +0.00423 & +0.01227 \\
+Borderline-SMOTE1 & 6 & +0.00124 & +0.00117 & +0.00517 \\
+No downweighting & 6 & +0.00749 & +0.00005 & -0.00344 \\
+No intervention & 6 & +0.01989 & +0.00035 & -0.00884 \\
+Random oversampling & 6 & -0.00517 & +0.00210 & +0.00572 \\
+SMOTE & 6 & -0.00757 & +0.00043 & +0.00282 \\
+WRND adapter & 3 & +0.02118 & +0.00042 & -0.00460 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{Paired means on common datasets: SVM, supplied labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Comparator & $D$ & $\Delta$ G-mean & $\Delta$ ROC-AUC & $\Delta$ AP\\
+\hline
+ADASYN & 5 & -0.01940 & -0.00076 & +0.00259 \\
+Borderline-SMOTE1 & 6 & -0.00409 & +0.00074 & +0.00604 \\
+No downweighting & 6 & -0.00241 & -0.00058 & -0.00038 \\
+No intervention & 6 & +0.01990 & +0.00269 & -0.00024 \\
+Random oversampling & 6 & -0.01389 & -0.00130 & -0.00336 \\
+SMOTE & 6 & -0.00904 & -0.00117 & -0.00480 \\
+WRND adapter & 3 & -0.00228 & -0.00171 & -0.00501 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{Paired means on common datasets: LR, corrupted fitting labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Comparator & $D$ & $\Delta$ G-mean & $\Delta$ ROC-AUC & $\Delta$ AP\\
+\hline
+ADASYN & 6 & +0.02334 & +0.00283 & +0.01625 \\
+Borderline-SMOTE1 & 6 & +0.03663 & +0.00773 & +0.02735 \\
+No downweighting & 6 & -0.00089 & -0.00175 & -0.00377 \\
+No intervention & 6 & +0.06145 & +0.00433 & +0.00894 \\
+Random oversampling & 6 & +0.01009 & +0.00096 & +0.01182 \\
+SMOTE & 6 & +0.00697 & +0.00215 & +0.00577 \\
+WRND adapter & 3 & -0.00242 & +0.00135 & +0.00703 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{Paired means on common datasets: RF, corrupted fitting labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Comparator & $D$ & $\Delta$ G-mean & $\Delta$ ROC-AUC & $\Delta$ AP\\
+\hline
+ADASYN & 6 & +0.01331 & +0.01421 & +0.03005 \\
+Borderline-SMOTE1 & 6 & +0.01925 & +0.01490 & +0.03365 \\
+No downweighting & 6 & +0.00631 & +0.00051 & -0.00142 \\
+No intervention & 6 & +0.02623 & +0.00614 & +0.00364 \\
+Random oversampling & 6 & +0.01867 & +0.01106 & +0.02030 \\
+SMOTE & 6 & +0.00195 & +0.00760 & +0.01171 \\
+WRND adapter & 3 & +0.01401 & +0.00448 & +0.00165 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[htbp]
+\caption{Paired means on common datasets: SVM, corrupted fitting labels}
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Comparator & $D$ & $\Delta$ G-mean & $\Delta$ ROC-AUC & $\Delta$ AP\\
+\hline
+ADASYN & 6 & +0.00668 & +0.00999 & +0.02230 \\
+Borderline-SMOTE1 & 6 & +0.02847 & +0.02277 & +0.05136 \\
+No downweighting & 6 & -0.00113 & -0.00270 & -0.00701 \\
+No intervention & 6 & +0.02491 & +0.01124 & +0.00106 \\
+Random oversampling & 6 & -0.00563 & +0.00074 & +0.00407 \\
+SMOTE & 6 & -0.00606 & +0.00005 & +0.00140 \\
+WRND adapter & 3 & -0.00265 & -0.00027 & -0.00677 \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\subsection*{S4. Completed and failed benchmark entries}
+Counts refer to classifier--outer-fold--condition entries, not necessarily distinct resampling events. Failures are retained and are not assigned scores.
+\begin{table}[htbp]
+\caption{Benchmark Completion and Failure Counts}
+\centering\begin{tabular}{lrr}
+\hline
+Method & Successful & Failed\\
+\hline
+ADASYN & 501 & 39 \\
+Borderline-SMOTE1 & 540 & 0 \\
+No downweighting & 540 & 0 \\
+No intervention & 540 & 0 \\
+Complete & 540 & 0 \\
+Random oversampling & 540 & 0 \\
+SMOTE & 540 & 0 \\
+WRND adapter & 366 & 174 \\
+\hline
+\end{tabular}\end{table}
+
+\clearpage
+\section*{S5. External Hybrid-Method Follow-up}
+The following tables extend the supplementary evidence with Tables S16--S23. The configured external method is SMOTE-ENN from imbalanced-learn 0.14.2. All differences are SMOTE-ENN minus comparator. Bootstrap intervals are individual exploratory 95\% intervals, not simultaneous intervals or adjusted hypothesis tests.
+The experiment crosses Gaussian, moons and circles geometries with clean, dispersed and boundary-near label corruption, with 30 replications per setting. LR and RBF-SVM have fixed configurations. Each model is evaluated at its default rule and a threshold selected using independent trusted validation. Count denotes SMOTE matched to the number of synthetics surviving SMOTE-ENN. Count + retention additionally retains exactly the same original observations as SMOTE-ENN. The comparator synthetics receive no additional editing. Tables S16--S19 provide 5000-resample paired percentile intervals; S20--S23 provide metric means. Full settings, provenance and ranking intervals are in the accompanying code and CSV files.
+
+\begin{table}[htbp]
+\caption{G-mean: LR, default decision rule}
+\centering\small
+\begin{tabular}{llrr}
+\hline
+Setting & Comparator & Mean $\Delta$ & Individual 95\% CI\\
+\hline
+Gaussian / clean & None & +0.19442 & $[+0.18480, +0.20434]$ \\
+Gaussian / clean & SMOTE & -0.00046 & $[-0.00176, +0.00083]$ \\
+Gaussian / clean & Count & +0.00136 & $[-0.00082, +0.00376]$ \\
+Gaussian / clean & Count + retention & +0.00528 & $[+0.00276, +0.00782]$ \\
+Gaussian / dispersed & None & +0.31005 & $[+0.28751, +0.33317]$ \\
+Gaussian / dispersed & SMOTE & -0.00318 & $[-0.00705, +0.00073]$ \\
+Gaussian / dispersed & Count & -0.03920 & $[-0.04467, -0.03350]$ \\
+Gaussian / dispersed & Count + retention & +0.04442 & $[+0.04053, +0.04837]$ \\
+Gaussian / boundary & None & +0.04109 & $[+0.03365, +0.04894]$ \\
+Gaussian / boundary & SMOTE & -0.01620 & $[-0.01844, -0.01401]$ \\
+Gaussian / boundary & Count & -0.02080 & $[-0.02375, -0.01795]$ \\
+Gaussian / boundary & Count + retention & +0.00172 & $[+0.00110, +0.00237]$ \\
+Moons / clean & None & +0.08596 & $[+0.08172, +0.09044]$ \\
+Moons / clean & SMOTE & +0.00007 & $[-0.00018, +0.00036]$ \\
+Moons / clean & Count & +0.00009 & $[-0.00014, +0.00032]$ \\
+Moons / clean & Count + retention & -0.00002 & $[-0.00018, +0.00010]$ \\
+Moons / dispersed & None & +0.11578 & $[+0.10317, +0.12840]$ \\
+Moons / dispersed & SMOTE & +0.00838 & $[+0.00577, +0.01108]$ \\
+Moons / dispersed & Count & -0.02002 & $[-0.02334, -0.01693]$ \\
+Moons / dispersed & Count + retention & +0.03371 & $[+0.02949, +0.03774]$ \\
+Moons / boundary & None & +0.04407 & $[+0.02567, +0.06446]$ \\
+Moons / boundary & SMOTE & -0.00093 & $[-0.00191, +0.00007]$ \\
+Moons / boundary & Count & -0.00159 & $[-0.00267, -0.00050]$ \\
+Moons / boundary & Count + retention & +0.00000 & $[-0.00033, +0.00034]$ \\
+Circles / clean & None & +0.50539 & $[+0.50089, +0.51027]$ \\
+Circles / clean & SMOTE & +0.00908 & $[+0.00657, +0.01165]$ \\
+Circles / clean & Count & +0.01889 & $[+0.01298, +0.02565]$ \\
+Circles / clean & Count + retention & -0.00073 & $[-0.00201, +0.00043]$ \\
+Circles / dispersed & None & +0.38730 & $[+0.30125, +0.46478]$ \\
+Circles / dispersed & SMOTE & -0.11273 & $[-0.20034, -0.03393]$ \\
+Circles / dispersed & Count & +0.38594 & $[+0.30008, +0.46335]$ \\
+Circles / dispersed & Count + retention & +0.00845 & $[-0.03377, +0.06017]$ \\
+Circles / boundary & None & +0.50806 & $[+0.50155, +0.51498]$ \\
+Circles / boundary & SMOTE & +0.01723 & $[+0.01170, +0.02341]$ \\
+Circles / boundary & Count & +0.04468 & $[+0.02554, +0.07543]$ \\
+Circles / boundary & Count + retention & -0.00004 & $[-0.00125, +0.00155]$ \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{G-mean: LR, selected decision rule}
+\centering\small
+\begin{tabular}{llrr}
+\hline
+Setting & Comparator & Mean $\Delta$ & Individual 95\% CI\\
+\hline
+Gaussian / clean & None & +0.00060 & $[-0.00115, +0.00246]$ \\
+Gaussian / clean & SMOTE & +0.00073 & $[-0.00082, +0.00253]$ \\
+Gaussian / clean & Count & +0.00044 & $[-0.00114, +0.00249]$ \\
+Gaussian / clean & Count + retention & +0.00127 & $[-0.00002, +0.00268]$ \\
+Gaussian / dispersed & None & -0.00253 & $[-0.00500, +0.00021]$ \\
+Gaussian / dispersed & SMOTE & -0.00116 & $[-0.00274, +0.00043]$ \\
+Gaussian / dispersed & Count & -0.00224 & $[-0.00386, -0.00058]$ \\
+Gaussian / dispersed & Count + retention & +0.00008 & $[-0.00180, +0.00201]$ \\
+Gaussian / boundary & None & -0.00116 & $[-0.00314, +0.00055]$ \\
+Gaussian / boundary & SMOTE & -0.00063 & $[-0.00165, +0.00038]$ \\
+Gaussian / boundary & Count & -0.00144 & $[-0.00260, -0.00038]$ \\
+Gaussian / boundary & Count + retention & -0.00008 & $[-0.00107, +0.00097]$ \\
+Moons / clean & None & -0.00042 & $[-0.00180, +0.00092]$ \\
+Moons / clean & SMOTE & +0.00014 & $[-0.00009, +0.00044]$ \\
+Moons / clean & Count & +0.00020 & $[-0.00004, +0.00051]$ \\
+Moons / clean & Count + retention & +0.00006 & $[-0.00015, +0.00028]$ \\
+Moons / dispersed & None & -0.00315 & $[-0.00545, -0.00064]$ \\
+Moons / dispersed & SMOTE & -0.00050 & $[-0.00192, +0.00089]$ \\
+Moons / dispersed & Count & -0.00090 & $[-0.00246, +0.00063]$ \\
+Moons / dispersed & Count + retention & +0.00070 & $[-0.00107, +0.00267]$ \\
+Moons / boundary & None & -0.01523 & $[-0.02064, -0.01064]$ \\
+Moons / boundary & SMOTE & +0.00058 & $[-0.00016, +0.00138]$ \\
+Moons / boundary & Count & +0.00059 & $[-0.00009, +0.00136]$ \\
+Moons / boundary & Count + retention & +0.00005 & $[-0.00049, +0.00062]$ \\
+Circles / clean & None & -0.00050 & $[-0.00274, +0.00175]$ \\
+Circles / clean & SMOTE & +0.00074 & $[+0.00000, +0.00156]$ \\
+Circles / clean & Count & +0.00080 & $[-0.00058, +0.00267]$ \\
+Circles / clean & Count + retention & -0.00017 & $[-0.00120, +0.00078]$ \\
+Circles / dispersed & None & -0.00054 & $[-0.00448, +0.00246]$ \\
+Circles / dispersed & SMOTE & -0.00168 & $[-0.00495, +0.00089]$ \\
+Circles / dispersed & Count & +0.00088 & $[-0.00158, +0.00334]$ \\
+Circles / dispersed & Count + retention & +0.00220 & $[+0.00014, +0.00411]$ \\
+Circles / boundary & None & -0.00064 & $[-0.00194, +0.00079]$ \\
+Circles / boundary & SMOTE & -0.00096 & $[-0.00205, +0.00009]$ \\
+Circles / boundary & Count & -0.00113 & $[-0.00209, -0.00031]$ \\
+Circles / boundary & Count + retention & -0.00049 & $[-0.00147, +0.00045]$ \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{G-mean: SVM, default decision rule}
+\centering\small
+\begin{tabular}{llrr}
+\hline
+Setting & Comparator & Mean $\Delta$ & Individual 95\% CI\\
+\hline
+Gaussian / clean & None & +0.23384 & $[+0.21992, +0.24849]$ \\
+Gaussian / clean & SMOTE & -0.00095 & $[-0.00240, +0.00044]$ \\
+Gaussian / clean & Count & +0.00217 & $[-0.00034, +0.00474]$ \\
+Gaussian / clean & Count + retention & +0.00281 & $[+0.00015, +0.00539]$ \\
+Gaussian / dispersed & None & +0.23443 & $[+0.21656, +0.25234]$ \\
+Gaussian / dispersed & SMOTE & -0.00805 & $[-0.01263, -0.00380]$ \\
+Gaussian / dispersed & Count & +0.02455 & $[+0.01543, +0.03427]$ \\
+Gaussian / dispersed & Count + retention & +0.02148 & $[+0.01042, +0.03525]$ \\
+Gaussian / boundary & None & +0.07162 & $[+0.05795, +0.08709]$ \\
+Gaussian / boundary & SMOTE & -0.00850 & $[-0.01427, -0.00370]$ \\
+Gaussian / boundary & Count & -0.01698 & $[-0.02557, -0.00958]$ \\
+Gaussian / boundary & Count + retention & +0.00140 & $[-0.00096, +0.00398]$ \\
+Moons / clean & None & +0.00953 & $[+0.00781, +0.01137]$ \\
+Moons / clean & SMOTE & +0.00003 & $[-0.00012, +0.00018]$ \\
+Moons / clean & Count & +0.00004 & $[-0.00011, +0.00019]$ \\
+Moons / clean & Count + retention & -0.00005 & $[-0.00016, +0.00003]$ \\
+Moons / dispersed & None & +0.01849 & $[+0.01124, +0.02531]$ \\
+Moons / dispersed & SMOTE & -0.00519 & $[-0.01004, -0.00113]$ \\
+Moons / dispersed & Count & -0.00497 & $[-0.01072, +0.00011]$ \\
+Moons / dispersed & Count + retention & +0.02610 & $[+0.01493, +0.03878]$ \\
+Moons / boundary & None & -0.05942 & $[-0.06463, -0.05413]$ \\
+Moons / boundary & SMOTE & -0.00111 & $[-0.00163, -0.00061]$ \\
+Moons / boundary & Count & -0.00136 & $[-0.00188, -0.00088]$ \\
+Moons / boundary & Count + retention & +0.00029 & $[+0.00001, +0.00058]$ \\
+Circles / clean & None & +0.02302 & $[+0.02073, +0.02527]$ \\
+Circles / clean & SMOTE & +0.00018 & $[-0.00030, +0.00066]$ \\
+Circles / clean & Count & +0.00018 & $[-0.00035, +0.00070]$ \\
+Circles / clean & Count + retention & -0.00015 & $[-0.00067, +0.00029]$ \\
+Circles / dispersed & None & +0.03561 & $[+0.02503, +0.04532]$ \\
+Circles / dispersed & SMOTE & -0.01371 & $[-0.02118, -0.00753]$ \\
+Circles / dispersed & Count & -0.01515 & $[-0.02476, -0.00706]$ \\
+Circles / dispersed & Count + retention & +0.05108 & $[+0.03979, +0.06422]$ \\
+Circles / boundary & None & -0.06783 & $[-0.07074, -0.06502]$ \\
+Circles / boundary & SMOTE & -0.00526 & $[-0.00634, -0.00438]$ \\
+Circles / boundary & Count & -0.00630 & $[-0.00749, -0.00522]$ \\
+Circles / boundary & Count + retention & +0.00015 & $[-0.00038, +0.00070]$ \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{G-mean: SVM, selected decision rule}
+\centering\small
+\begin{tabular}{llrr}
+\hline
+Setting & Comparator & Mean $\Delta$ & Individual 95\% CI\\
+\hline
+Gaussian / clean & None & +0.04284 & $[+0.03661, +0.04962]$ \\
+Gaussian / clean & SMOTE & -0.00151 & $[-0.00471, +0.00103]$ \\
+Gaussian / clean & Count & -0.00208 & $[-0.00613, +0.00129]$ \\
+Gaussian / clean & Count + retention & +0.00122 & $[-0.00142, +0.00382]$ \\
+Gaussian / dispersed & None & +0.01292 & $[+0.00526, +0.02016]$ \\
+Gaussian / dispersed & SMOTE & -0.00679 & $[-0.01162, -0.00222]$ \\
+Gaussian / dispersed & Count & -0.01281 & $[-0.01906, -0.00669]$ \\
+Gaussian / dispersed & Count + retention & +0.01018 & $[+0.00462, +0.01641]$ \\
+Gaussian / boundary & None & -0.02332 & $[-0.03055, -0.01650]$ \\
+Gaussian / boundary & SMOTE & -0.00353 & $[-0.00698, -0.00041]$ \\
+Gaussian / boundary & Count & -0.00886 & $[-0.01453, -0.00401]$ \\
+Gaussian / boundary & Count + retention & -0.00403 & $[-0.00653, -0.00171]$ \\
+Moons / clean & None & +0.00113 & $[+0.00024, +0.00211]$ \\
+Moons / clean & SMOTE & -0.00015 & $[-0.00035, -0.00003]$ \\
+Moons / clean & Count & +0.00006 & $[-0.00028, +0.00044]$ \\
+Moons / clean & Count + retention & +0.00021 & $[-0.00007, +0.00061]$ \\
+Moons / dispersed & None & -0.00416 & $[-0.00873, -0.00022]$ \\
+Moons / dispersed & SMOTE & -0.00257 & $[-0.00535, -0.00021]$ \\
+Moons / dispersed & Count & -0.00476 & $[-0.00879, -0.00117]$ \\
+Moons / dispersed & Count + retention & +0.01601 & $[+0.00956, +0.02294]$ \\
+Moons / boundary & None & -0.03785 & $[-0.04290, -0.03312]$ \\
+Moons / boundary & SMOTE & -0.00117 & $[-0.00332, +0.00118]$ \\
+Moons / boundary & Count & -0.00089 & $[-0.00282, +0.00110]$ \\
+Moons / boundary & Count + retention & -0.00042 & $[-0.00173, +0.00078]$ \\
+Circles / clean & None & -0.00043 & $[-0.00148, +0.00063]$ \\
+Circles / clean & SMOTE & -0.00001 & $[-0.00038, +0.00041]$ \\
+Circles / clean & Count & +0.00020 & $[-0.00028, +0.00066]$ \\
+Circles / clean & Count + retention & +0.00012 & $[-0.00032, +0.00054]$ \\
+Circles / dispersed & None & -0.01345 & $[-0.02043, -0.00773]$ \\
+Circles / dispersed & SMOTE & -0.00676 & $[-0.01012, -0.00387]$ \\
+Circles / dispersed & Count & -0.01258 & $[-0.01901, -0.00739]$ \\
+Circles / dispersed & Count + retention & +0.03062 & $[+0.02258, +0.03927]$ \\
+Circles / boundary & None & -0.00474 & $[-0.00683, -0.00294]$ \\
+Circles / boundary & SMOTE & -0.00064 & $[-0.00173, +0.00026]$ \\
+Circles / boundary & Count & -0.00111 & $[-0.00239, -0.00008]$ \\
+Circles / boundary & Count + retention & -0.00150 & $[-0.00271, -0.00049]$ \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{All metrics: LR, default decision rule}
+\centering\small
+\begin{tabular}{llrrr}
+\hline
+Setting & Method & G-mean & ROC-AUC & AP\\
+\hline
+Gaussian / clean & None & 0.6432 & 0.9203 & 0.6429 \\
+Gaussian / clean & SMOTE & 0.8381 & 0.9197 & 0.6410 \\
+Gaussian / clean & SMOTE-ENN & 0.8377 & 0.9195 & 0.6402 \\
+Gaussian / clean & Count & 0.8363 & 0.9198 & 0.6411 \\
+Gaussian / clean & Count + retention & 0.8324 & 0.9194 & 0.6397 \\
+Gaussian / dispersed & None & 0.4829 & 0.9196 & 0.6400 \\
+Gaussian / dispersed & SMOTE & 0.7961 & 0.9178 & 0.6340 \\
+Gaussian / dispersed & SMOTE-ENN & 0.7930 & 0.9163 & 0.6292 \\
+Gaussian / dispersed & Count & 0.8322 & 0.9183 & 0.6353 \\
+Gaussian / dispersed & Count + retention & 0.7486 & 0.9157 & 0.6272 \\
+Gaussian / boundary & None & 0.7660 & 0.9197 & 0.6406 \\
+Gaussian / boundary & SMOTE & 0.8233 & 0.9188 & 0.6377 \\
+Gaussian / boundary & SMOTE-ENN & 0.8071 & 0.9186 & 0.6367 \\
+Gaussian / boundary & Count & 0.8279 & 0.9189 & 0.6379 \\
+Gaussian / boundary & Count + retention & 0.8054 & 0.9187 & 0.6372 \\
+Moons / clean & None & 0.7932 & 0.9597 & 0.8192 \\
+Moons / clean & SMOTE & 0.8790 & 0.9597 & 0.8187 \\
+Moons / clean & SMOTE-ENN & 0.8791 & 0.9597 & 0.8187 \\
+Moons / clean & Count & 0.8790 & 0.9597 & 0.8187 \\
+Moons / clean & Count + retention & 0.8791 & 0.9597 & 0.8187 \\
+Moons / dispersed & None & 0.7359 & 0.9589 & 0.8184 \\
+Moons / dispersed & SMOTE & 0.8433 & 0.9580 & 0.8172 \\
+Moons / dispersed & SMOTE-ENN & 0.8517 & 0.9577 & 0.8159 \\
+Moons / dispersed & Count & 0.8717 & 0.9585 & 0.8180 \\
+Moons / dispersed & Count + retention & 0.8180 & 0.9571 & 0.8149 \\
+Moons / boundary & None & 0.7926 & 0.9553 & 0.8123 \\
+Moons / boundary & SMOTE & 0.8376 & 0.9478 & 0.7970 \\
+Moons / boundary & SMOTE-ENN & 0.8366 & 0.9481 & 0.7976 \\
+Moons / boundary & Count & 0.8382 & 0.9479 & 0.7972 \\
+Moons / boundary & Count + retention & 0.8366 & 0.9482 & 0.7978 \\
+Circles / clean & None & 0.0000 & 0.5025 & 0.0828 \\
+Circles / clean & SMOTE & 0.4963 & 0.5016 & 0.0827 \\
+Circles / clean & SMOTE-ENN & 0.5054 & 0.5016 & 0.0827 \\
+Circles / clean & Count & 0.4865 & 0.5016 & 0.0827 \\
+Circles / clean & Count + retention & 0.5061 & 0.5019 & 0.0827 \\
+Circles / dispersed & None & 0.0000 & 0.5015 & 0.0827 \\
+Circles / dispersed & SMOTE & 0.5000 & 0.5020 & 0.0828 \\
+Circles / dispersed & SMOTE-ENN & 0.3873 & 0.5003 & 0.0825 \\
+Circles / dispersed & Count & 0.0014 & 0.5003 & 0.0825 \\
+Circles / dispersed & Count + retention & 0.3789 & 0.4998 & 0.0824 \\
+Circles / boundary & None & 0.0000 & 0.5029 & 0.0828 \\
+Circles / boundary & SMOTE & 0.4908 & 0.5028 & 0.0828 \\
+Circles / boundary & SMOTE-ENN & 0.5081 & 0.5027 & 0.0828 \\
+Circles / boundary & Count & 0.4634 & 0.5027 & 0.0828 \\
+Circles / boundary & Count + retention & 0.5081 & 0.5028 & 0.0828 \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{All metrics: LR, selected decision rule}
+\centering\small
+\begin{tabular}{llrrr}
+\hline
+Setting & Method & G-mean & ROC-AUC & AP\\
+\hline
+Gaussian / clean & None & 0.8368 & 0.9203 & 0.6429 \\
+Gaussian / clean & SMOTE & 0.8366 & 0.9197 & 0.6410 \\
+Gaussian / clean & SMOTE-ENN & 0.8373 & 0.9195 & 0.6402 \\
+Gaussian / clean & Count & 0.8369 & 0.9198 & 0.6411 \\
+Gaussian / clean & Count + retention & 0.8361 & 0.9194 & 0.6397 \\
+Gaussian / dispersed & None & 0.8353 & 0.9196 & 0.6400 \\
+Gaussian / dispersed & SMOTE & 0.8340 & 0.9178 & 0.6340 \\
+Gaussian / dispersed & SMOTE-ENN & 0.8328 & 0.9163 & 0.6292 \\
+Gaussian / dispersed & Count & 0.8351 & 0.9183 & 0.6353 \\
+Gaussian / dispersed & Count + retention & 0.8327 & 0.9157 & 0.6272 \\
+Gaussian / boundary & None & 0.8363 & 0.9197 & 0.6406 \\
+Gaussian / boundary & SMOTE & 0.8358 & 0.9188 & 0.6377 \\
+Gaussian / boundary & SMOTE-ENN & 0.8352 & 0.9186 & 0.6367 \\
+Gaussian / boundary & Count & 0.8366 & 0.9189 & 0.6379 \\
+Gaussian / boundary & Count + retention & 0.8352 & 0.9187 & 0.6372 \\
+Moons / clean & None & 0.8754 & 0.9597 & 0.8192 \\
+Moons / clean & SMOTE & 0.8749 & 0.9597 & 0.8187 \\
+Moons / clean & SMOTE-ENN & 0.8750 & 0.9597 & 0.8187 \\
+Moons / clean & Count & 0.8748 & 0.9597 & 0.8187 \\
+Moons / clean & Count + retention & 0.8750 & 0.9597 & 0.8187 \\
+Moons / dispersed & None & 0.8708 & 0.9589 & 0.8184 \\
+Moons / dispersed & SMOTE & 0.8682 & 0.9580 & 0.8172 \\
+Moons / dispersed & SMOTE-ENN & 0.8677 & 0.9577 & 0.8159 \\
+Moons / dispersed & Count & 0.8686 & 0.9585 & 0.8180 \\
+Moons / dispersed & Count + retention & 0.8670 & 0.9571 & 0.8149 \\
+Moons / boundary & None & 0.8601 & 0.9553 & 0.8123 \\
+Moons / boundary & SMOTE & 0.8443 & 0.9478 & 0.7970 \\
+Moons / boundary & SMOTE-ENN & 0.8449 & 0.9481 & 0.7976 \\
+Moons / boundary & Count & 0.8443 & 0.9479 & 0.7972 \\
+Moons / boundary & Count + retention & 0.8448 & 0.9482 & 0.7978 \\
+Circles / clean & None & 0.5612 & 0.5025 & 0.0828 \\
+Circles / clean & SMOTE & 0.5599 & 0.5016 & 0.0827 \\
+Circles / clean & SMOTE-ENN & 0.5607 & 0.5016 & 0.0827 \\
+Circles / clean & Count & 0.5599 & 0.5016 & 0.0827 \\
+Circles / clean & Count + retention & 0.5608 & 0.5019 & 0.0827 \\
+Circles / dispersed & None & 0.5612 & 0.5015 & 0.0827 \\
+Circles / dispersed & SMOTE & 0.5623 & 0.5020 & 0.0828 \\
+Circles / dispersed & SMOTE-ENN & 0.5606 & 0.5003 & 0.0825 \\
+Circles / dispersed & Count & 0.5598 & 0.5003 & 0.0825 \\
+Circles / dispersed & Count + retention & 0.5584 & 0.4998 & 0.0824 \\
+Circles / boundary & None & 0.5616 & 0.5029 & 0.0828 \\
+Circles / boundary & SMOTE & 0.5619 & 0.5028 & 0.0828 \\
+Circles / boundary & SMOTE-ENN & 0.5610 & 0.5027 & 0.0828 \\
+Circles / boundary & Count & 0.5621 & 0.5027 & 0.0828 \\
+Circles / boundary & Count + retention & 0.5615 & 0.5028 & 0.0828 \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{All metrics: SVM, default decision rule}
+\centering\small
+\begin{tabular}{llrrr}
+\hline
+Setting & Method & G-mean & ROC-AUC & AP\\
+\hline
+Gaussian / clean & None & 0.5956 & 0.7841 & 0.5682 \\
+Gaussian / clean & SMOTE & 0.8304 & 0.8885 & 0.4442 \\
+Gaussian / clean & SMOTE-ENN & 0.8295 & 0.8827 & 0.4366 \\
+Gaussian / clean & Count & 0.8273 & 0.8875 & 0.4654 \\
+Gaussian / clean & Count + retention & 0.8267 & 0.8812 & 0.4033 \\
+Gaussian / dispersed & None & 0.5755 & 0.7726 & 0.5696 \\
+Gaussian / dispersed & SMOTE & 0.8179 & 0.8849 & 0.4619 \\
+Gaussian / dispersed & SMOTE-ENN & 0.8099 & 0.8735 & 0.4305 \\
+Gaussian / dispersed & Count & 0.7853 & 0.8798 & 0.5452 \\
+Gaussian / dispersed & Count + retention & 0.7884 & 0.8673 & 0.4091 \\
+Gaussian / boundary & None & 0.7166 & 0.8653 & 0.5771 \\
+Gaussian / boundary & SMOTE & 0.7967 & 0.8647 & 0.3580 \\
+Gaussian / boundary & SMOTE-ENN & 0.7882 & 0.8596 & 0.3506 \\
+Gaussian / boundary & Count & 0.8052 & 0.8689 & 0.3742 \\
+Gaussian / boundary & Count + retention & 0.7868 & 0.8611 & 0.3499 \\
+Moons / clean & None & 0.9858 & 0.9998 & 0.9984 \\
+Moons / clean & SMOTE & 0.9953 & 0.9999 & 0.9989 \\
+Moons / clean & SMOTE-ENN & 0.9953 & 0.9999 & 0.9988 \\
+Moons / clean & Count & 0.9953 & 0.9999 & 0.9989 \\
+Moons / clean & Count + retention & 0.9954 & 0.9999 & 0.9988 \\
+Moons / dispersed & None & 0.9628 & 0.9994 & 0.9954 \\
+Moons / dispersed & SMOTE & 0.9865 & 0.9987 & 0.9868 \\
+Moons / dispersed & SMOTE-ENN & 0.9813 & 0.9973 & 0.9712 \\
+Moons / dispersed & Count & 0.9862 & 0.9994 & 0.9956 \\
+Moons / dispersed & Count + retention & 0.9552 & 0.9917 & 0.9295 \\
+Moons / boundary & None & 0.9753 & 0.9944 & 0.9221 \\
+Moons / boundary & SMOTE & 0.9170 & 0.9670 & 0.6384 \\
+Moons / boundary & SMOTE-ENN & 0.9159 & 0.9729 & 0.7131 \\
+Moons / boundary & Count & 0.9173 & 0.9673 & 0.6427 \\
+Moons / boundary & Count + retention & 0.9156 & 0.9733 & 0.7186 \\
+Circles / clean & None & 0.9631 & 0.9992 & 0.9941 \\
+Circles / clean & SMOTE & 0.9860 & 0.9992 & 0.9937 \\
+Circles / clean & SMOTE-ENN & 0.9862 & 0.9992 & 0.9936 \\
+Circles / clean & Count & 0.9860 & 0.9992 & 0.9937 \\
+Circles / clean & Count + retention & 0.9863 & 0.9992 & 0.9936 \\
+Circles / dispersed & None & 0.9310 & 0.9992 & 0.9940 \\
+Circles / dispersed & SMOTE & 0.9803 & 0.9979 & 0.9862 \\
+Circles / dispersed & SMOTE-ENN & 0.9666 & 0.9965 & 0.9786 \\
+Circles / dispersed & Count & 0.9817 & 0.9990 & 0.9928 \\
+Circles / dispersed & Count + retention & 0.9155 & 0.9885 & 0.9390 \\
+Circles / boundary & None & 0.9828 & 0.9986 & 0.9891 \\
+Circles / boundary & SMOTE & 0.9203 & 0.9979 & 0.9852 \\
+Circles / boundary & SMOTE-ENN & 0.9150 & 0.9979 & 0.9851 \\
+Circles / boundary & Count & 0.9213 & 0.9980 & 0.9854 \\
+Circles / boundary & Count + retention & 0.9149 & 0.9980 & 0.9857 \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage
+\begin{table}[htbp]
+\caption{All metrics: SVM, selected decision rule}
+\centering\small
+\begin{tabular}{llrrr}
+\hline
+Setting & Method & G-mean & ROC-AUC & AP\\
+\hline
+Gaussian / clean & None & 0.7864 & 0.7841 & 0.5682 \\
+Gaussian / clean & SMOTE & 0.8308 & 0.8885 & 0.4442 \\
+Gaussian / clean & SMOTE-ENN & 0.8292 & 0.8827 & 0.4366 \\
+Gaussian / clean & Count & 0.8313 & 0.8875 & 0.4654 \\
+Gaussian / clean & Count + retention & 0.8280 & 0.8812 & 0.4033 \\
+Gaussian / dispersed & None & 0.8015 & 0.7726 & 0.5696 \\
+Gaussian / dispersed & SMOTE & 0.8212 & 0.8849 & 0.4619 \\
+Gaussian / dispersed & SMOTE-ENN & 0.8144 & 0.8735 & 0.4305 \\
+Gaussian / dispersed & Count & 0.8273 & 0.8798 & 0.5452 \\
+Gaussian / dispersed & Count + retention & 0.8043 & 0.8673 & 0.4091 \\
+Gaussian / boundary & None & 0.8257 & 0.8653 & 0.5771 \\
+Gaussian / boundary & SMOTE & 0.8059 & 0.8647 & 0.3580 \\
+Gaussian / boundary & SMOTE-ENN & 0.8024 & 0.8596 & 0.3506 \\
+Gaussian / boundary & Count & 0.8112 & 0.8689 & 0.3742 \\
+Gaussian / boundary & Count + retention & 0.8064 & 0.8611 & 0.3499 \\
+Moons / clean & None & 0.9930 & 0.9998 & 0.9984 \\
+Moons / clean & SMOTE & 0.9943 & 0.9999 & 0.9989 \\
+Moons / clean & SMOTE-ENN & 0.9942 & 0.9999 & 0.9988 \\
+Moons / clean & Count & 0.9941 & 0.9999 & 0.9989 \\
+Moons / clean & Count + retention & 0.9940 & 0.9999 & 0.9988 \\
+Moons / dispersed & None & 0.9879 & 0.9994 & 0.9954 \\
+Moons / dispersed & SMOTE & 0.9863 & 0.9987 & 0.9868 \\
+Moons / dispersed & SMOTE-ENN & 0.9837 & 0.9973 & 0.9712 \\
+Moons / dispersed & Count & 0.9885 & 0.9994 & 0.9956 \\
+Moons / dispersed & Count + retention & 0.9677 & 0.9917 & 0.9295 \\
+Moons / boundary & None & 0.9781 & 0.9944 & 0.9221 \\
+Moons / boundary & SMOTE & 0.9414 & 0.9670 & 0.6384 \\
+Moons / boundary & SMOTE-ENN & 0.9402 & 0.9729 & 0.7131 \\
+Moons / boundary & Count & 0.9411 & 0.9673 & 0.6427 \\
+Moons / boundary & Count + retention & 0.9406 & 0.9733 & 0.7186 \\
+Circles / clean & None & 0.9867 & 0.9992 & 0.9941 \\
+Circles / clean & SMOTE & 0.9863 & 0.9992 & 0.9937 \\
+Circles / clean & SMOTE-ENN & 0.9863 & 0.9992 & 0.9936 \\
+Circles / clean & Count & 0.9861 & 0.9992 & 0.9937 \\
+Circles / clean & Count + retention & 0.9861 & 0.9992 & 0.9936 \\
+Circles / dispersed & None & 0.9867 & 0.9992 & 0.9940 \\
+Circles / dispersed & SMOTE & 0.9800 & 0.9979 & 0.9862 \\
+Circles / dispersed & SMOTE-ENN & 0.9732 & 0.9965 & 0.9786 \\
+Circles / dispersed & Count & 0.9858 & 0.9990 & 0.9928 \\
+Circles / dispersed & Count + retention & 0.9426 & 0.9885 & 0.9390 \\
+Circles / boundary & None & 0.9819 & 0.9986 & 0.9891 \\
+Circles / boundary & SMOTE & 0.9778 & 0.9979 & 0.9852 \\
+Circles / boundary & SMOTE-ENN & 0.9772 & 0.9979 & 0.9851 \\
+Circles / boundary & Count & 0.9783 & 0.9980 & 0.9854 \\
+Circles / boundary & Count + retention & 0.9787 & 0.9980 & 0.9857 \\
+\hline
+\end{tabular}
+\end{table}
+\clearpage

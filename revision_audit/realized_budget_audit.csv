@@ -1,0 +1,4 @@
+study,pairs,equal,proposed_fewer,proposed_more,min_difference,max_difference
+grid,1890,1890,0,0,0.0,0.0
+stress,510,510,0,0,0.0,0.0
+benchmark,540,507,33,0,-125.0,0.0

@@ -1,0 +1,10 @@
+{
+  "models": 2700,
+  "decision_rule_evaluations": 5400,
+  "matched_counts_and_weight_sums_verified": true,
+  "seed_namespace": [
+    20261015,
+    901
+  ],
+  "inference": "Individual paired bootstrap intervals within scenario; no simultaneous inference or cross-dataset significance claims"
+}

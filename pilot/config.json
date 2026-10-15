@@ -1,0 +1,25 @@
+{
+  "parameters": {
+    "kmin": 3,
+    "k0": 10,
+    "kmax": 30,
+    "alpha": 1.0,
+    "lam": 0.75,
+    "kappa": 2.0,
+    "xi": 2.0,
+    "low": 0.3,
+    "high": 0.5,
+    "dis": 0.6,
+    "amb": 0.3,
+    "wmin": 0.1,
+    "beta": 1.0
+  },
+  "reps": 30,
+  "n": 2000,
+  "test_n": 10000,
+  "separation": 2,
+  "true_ir": 10,
+  "noise": 0.1,
+  "classifier": "LogisticRegression C=1",
+  "tuning": "none; fixed a priori pilot parameters"
+}
