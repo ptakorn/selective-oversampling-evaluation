@@ -1,0 +1,14 @@
+{
+  "replications": 30,
+  "tuning": false,
+  "data": "same pilot seeds; development study",
+  "variants": [
+    "full",
+    "no_downweight",
+    "unit_synthetic",
+    "unit_all",
+    "ambiguity_only"
+  ],
+  "new_model_fits": 450,
+  "baseline_reuse": true
+}
