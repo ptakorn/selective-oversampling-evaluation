@@ -35,7 +35,8 @@ Verification uses the included results and saved validation/test scores; it does
 | `revision_audit/confirmation/` | Targeted Gaussian/moons/circles extension, 2700 fits | `raw.csv`, `paired_intervals.csv` |
 | `evidence_supplement/` | 432 paired intervals and complete baseline reporting | `all_paired_intervals.csv`, baseline tables |
 | `external_control/` | SMOTE-ENN, count and original-retention controls, 1620 new fits | `new_raw.csv`, `paired_intervals.csv`, `provenance.zip` |
-| `reports/` | Latest combined supplementary tables S1--S23 | `supplement_body.tex`, `supplement_updated.pdf` |
+| `reports/` | In-repository combined supplementary tables S1--S23 | `supplement_body.tex`, `supplement_updated.pdf` |
+| 15-dataset benchmark follow-up | Separate [GitHub Release archive](https://github.com/ptakorn/selective-oversampling-evaluation/releases/tag/followup-15datasets-20261015) | Protocol, scripts, manifest, checkpoints, analyses, and outputs |
 | `docs/` | Provenance, table mapping and update instructions | Markdown documentation |
 
 Raw files and numeric summaries are the evidence; older per-experiment prose reports may predate the supplementary studies. The latest root protocol and study READMEs explain their scope. `*_insert.tex` files are drafting aids and may duplicate methods between inserts; place protocol in Experimental Design and numerical outcomes in Results.
@@ -109,15 +110,15 @@ The targeted extension contains 2700 model fits / 5400 decision-rule evaluations
 
 The external SMOTE-ENN study adds 1620 fits / 3240 evaluations and reuses 2160 earlier no-intervention / SMOTE evaluations. It is an explicitly configured imbalanced-learn hybrid cleaning method, not a verified WRND reproduction. Count-only and count-plus-original-retention controls are distinct. All external fits completed without fitting warnings. This does not establish general superiority or generalization across modern noise-aware methods.
 
-Both follow-ups were designed after earlier results. Settings are not independent benchmark datasets. Bootstrap intervals remain exploratory individual intervals. No new model fits were performed merely to package this version.
+The separate [15-dataset benchmark follow-up archive](https://github.com/ptakorn/selective-oversampling-evaluation/releases/download/followup-15datasets-20261015/benchmark_confirmation_15datasets_20261015.zip) evaluates logistic regression and RBF-SVM with no intervention, class weighting, SMOTE, Complete, and SMOTE-ENN, under supplied labels and 10% fitting-only corruption. It uses joint inner selection of classifier parameters and thresholds. All 4500 final model fits and 9000 decision-rule evaluations completed without failures or recorded fitting warnings; none of the 12 primary comparisons met the Holm-adjusted criterion. The archive preserves its protocol history and dataset-manifest amendment.
+
+These follow-ups were designed after earlier results. Settings are not independent benchmark datasets. Bootstrap intervals remain exploratory individual intervals. No new model fits were performed merely to package this version.
 
 `external_control/config.json` and `implementation_manifest.json` record the original experiment configuration and local source hashes; those paths/hashes are historical provenance, not assertions that every third-party file is bundled. `verify_new_results.py` independently checks included raw data, interval calculations and endpoint/retention provenance. It does not verify science by itself.
 
-## Updating the existing GitHub repository
+## Repository and release references
 
-See [docs/UPLOAD.md](docs/UPLOAD.md). This folder is an update for the existing repository, not a request to create a new project. It contains no Git credentials or Git history and has not been pushed. Version `2026.10.15` labels this prepared snapshot; it is not a publication date or an already-created public release. Preserve the existing `.git` directory when copying the files into a local checkout, review changes, then commit and push yourself.
-
-After upload, record the actual public commit in the manuscript. Commit `5c1850b` identifies the earlier snapshot and must not be represented as containing this update.
+The repository snapshot for the original experiments is commit `e17cd2ce322ec3bb21c4d6151690ac9f0c62c5d6`. The additional 15-dataset follow-up is distributed separately as the [GitHub Release archive](https://github.com/ptakorn/selective-oversampling-evaluation/releases/tag/followup-15datasets-20261015), tagged `followup-15datasets-20261015`. The release tag points to the original snapshot; the attached archive contains the follow-up protocol, scripts, manifest, checkpoints, analyses, and numerical outputs.
 
 ## AI assistance and responsibility
 
@@ -125,4 +126,4 @@ OpenAI ChatGPT and Codex assisted manuscript drafting/revision, methodological d
 
 ## Licensing and citation
 
-The original software in this repository is provided under the MIT license; see `LICENSE`. This license does not grant rights to external WRND code or datasets. Attribution and source instructions appear in `THIRD_PARTY_NOTICES.md`. Cite the article when published; until then identify the author, repository URL and exact release/commit used. Do not invent a publication DOI. Create a GitHub release for the manuscript snapshot after upload; no public release has been created by this package.
+The original software in this repository is provided under the MIT license; see `LICENSE`. This license does not grant rights to external WRND code or datasets. Attribution and source instructions appear in `THIRD_PARTY_NOTICES.md`. Cite the article when published; until then identify the author, repository URL and exact release/commit used. Do not invent a publication DOI. The 15-dataset follow-up archive is available from the [published GitHub Release](https://github.com/ptakorn/selective-oversampling-evaluation/releases/tag/followup-15datasets-20261015).
